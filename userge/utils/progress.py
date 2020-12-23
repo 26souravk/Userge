@@ -52,18 +52,18 @@ async def progress(current: int,
         progress_str = \
             "__{}__ : `{}`\n" + \
             "```[{}{}]```\n" + \
-            "**Progress** : `{}%`\n" + \
-            "**Completed** : `{}`\n" + \
-            "**Total** : `{}`\n" + \
-            "**Speed** : `{}/s`\n" + \
-            "**ETA** : `{}`"
+            "**📈Progress** : `{}%`\n" + \
+            "**✅Completed** : `{}`\n" + \
+            "**📦Total** : `{}`\n" + \
+            "**🚀Speed** : `{}/s`\n" + \
+            "**⏳ETA** : `{}`"
         progress_str = progress_str.format(
             ud_type,
             file_name,
             ''.join((userge.Config.FINISHED_PROGRESS_STR
-                     for i in range(floor(percentage / 5)))),
+                     for i in range(floor(percentage / 10)))),
             ''.join((userge.Config.UNFINISHED_PROGRESS_STR
-                     for i in range(20 - floor(percentage / 5)))),
+                     for i in range(10 - floor(percentage / 10)))),
             round(percentage, 2),
             humanbytes(current),
             humanbytes(total),
